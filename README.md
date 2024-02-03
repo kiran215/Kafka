@@ -55,10 +55,10 @@ Launching Ubuntu...
 Installing, this may take a few minutes...**
 
 vi) To complete the installation you will be asked to create username and password for your Linux machine.
-   Username should be different than windows username. This usernamew will be your Linux administrator whith the ability to run sudo command.
+   Username should be different than windows username. This username will be your Linux administrator with the ability to run sudo command.
    
 vii) Disable IPv6 on WSL2
-   WSL2 currently has some networking issue whoch prevent outside program (Java programs, Conduktor etc..) to connect to kafka on WSL2.
+   WSL2 currently has some networking issue which prevent outside program (Java programs, Conduktor etc..) to connect to kafka on WSL2.
    To fix this it is recommended that disable IPv6 on WSL2.
 
    Commands to disbale IPv6 on WSL2. First command will ask to enter the password of Linux user created in steps 6.
@@ -69,7 +69,7 @@ vii) Disable IPv6 on WSL2
 
 2. Install Java JDK11 on WSL2 Ubuntu
 
-i) Run below commands to donwload Amazon Corretto 11 running a Debian-based operating system(Ubuntu).
+i) Run below commands to download Amazon Corretto 11 running a Debian-based operating system(Ubuntu).
    Refer below link for more details
    https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/generic-linux-install.html
    Commands as below :
@@ -80,7 +80,7 @@ i) Run below commands to donwload Amazon Corretto 11 running a Debian-based oper
    
    > sudo apt-get update; sudo apt-get install -y java-11-amazon-corretto-jdk
 
-ii)   After installation of Java JDK 11 check the installated java version using java --version command , it will give below response
+ii)   After installation of Java JDK 11 check the installed java version using java --version command , it will give below response
 
 **openjdk 11.0.22 2024-01-16 LTS
 OpenJDK Runtime Environment Corretto-11.0.22.7.1 (build 11.0.22+7-LTS)
