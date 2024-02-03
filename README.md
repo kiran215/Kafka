@@ -124,4 +124,12 @@ Zookeeper by default runs on 2181 port, test the same using below telnet command
 
 Kafka by default runs on 9092 port, test the same using below telnet command
 > telnet localhost 9092
+
+To stop Zookeeper use below command
+
+   > ~/kafka_2.13-3.6.1/bin/zookeeper-server-stop.sh
+
+To stop Kafka use below command
+
+   > ~/kafka_2.13-3.6.1/bin/kafka-server-stop.sh
    
