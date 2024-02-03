@@ -80,17 +80,22 @@ OpenJDK 64-Bit Server VM Corretto-11.0.22.7.1 (build 11.0.22+7-LTS, mixed mode)*
 3. Install Apache kafka
 
 i) Use below steps to download latest version of kafka on WSL2 Ubuntu.To check the latest version of kafka go to https://kafka.apache.org/downloads
+
     a) Below command will download zip file of kafka binaries
+    
        >  wget https://archive.apache.org/dist/kafka/3.6.1/kafka_2.13-3.6.1.tgz
    b) To extract the zip file downloaded in above steps use below command
+   
        <  tar xzf kafka_2.13-3.6.1.tgz
 
 4. Start Zookeeper
    Apache kafka depends on Zookeeper for cluster management. Zookeeper comes with kafka installation.
    Use below command to start zookeeper
+   
    > ~/kafka_2.13-3.6.1/bin/zookeeper-server-start.sh ~/kafka_2.13-3.6.1/config/zookeeper.properties
    
 6. Start Apache kafka on another shell window
+   
    > ~/kafka_2.13-3.6.1/bin/kafka-server-start.sh ~/kafka_2.13-3.6.1/config/server.properties
 
 Keep both shell windows opened, otherwise you will shut down Kafka or Zookeeper.
