@@ -61,11 +61,10 @@ vii) Disable IPv6 on WSL2
    WSL2 currently has some networking issue whoch prevent outside program (Java programs, Conduktor etc..) to connect to kafka on WSL2.
    To fix this it is recommended that disable IPv6 on WSL2.
 
-   Commands to disbale IPv6 on WSL2
+   Commands to disbale IPv6 on WSL2. First command will ask to enter the password of Linux user created in steps 6.
+   
    > sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
 
-      Above command will aks to enter the password of Linux user created in steps 6.
- 
    > sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
 2. Install Java JDK11 on WSL2 Ubuntu
@@ -92,7 +91,7 @@ OpenJDK 64-Bit Server VM Corretto-11.0.22.7.1 (build 11.0.22+7-LTS, mixed mode)*
 i) Use below steps to download latest version of kafka on WSL2 Ubuntu.To check the latest version of kafka go to https://kafka.apache.org/downloads
 
     a) Below command will download zip file of kafka binaries
-   
+    
        >  wget https://archive.apache.org/dist/kafka/3.6.1/kafka_2.13-3.6.1.tgz
        
    b) To extract the zip file downloaded in above steps use below command
