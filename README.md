@@ -63,7 +63,9 @@ vii) Disable IPv6 on WSL2
 
    Commands to disbale IPv6 on WSL2
    > sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+
       Above command will aks to enter the password of Linux user created in steps 6.
+ 
    > sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
 2. Install Java JDK11 on WSL2 Ubuntu
@@ -73,7 +75,7 @@ i) Run below commands to donwload Amazon Corretto 11 running a Debian-based oper
    https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/generic-linux-install.html
    Commands as below :
    
-   > wget -O- https://apt.corretto.aws/corretto.key | sudo apt-key add - 
+   > wget -O- https://apt.corretto.aws/corretto.key | sudo apt-key add -
 
    > sudo add-apt-repository 'deb https://apt.corretto.aws stable main'
    
@@ -95,7 +97,7 @@ i) Use below steps to download latest version of kafka on WSL2 Ubuntu.To check t
        
    b) To extract the zip file downloaded in above steps use below command
    
-       ?  tar xzf kafka_2.13-3.6.1.tgz
+       >  tar xzf kafka_2.13-3.6.1.tgz
 
 4. Start Zookeeper
    Apache kafka depends on Zookeeper for cluster management. Zookeeper comes with kafka installation.
@@ -111,7 +113,9 @@ Keep both shell windows opened, otherwise you will shut down Kafka or Zookeeper.
 
 Add on - 
 To keep the zookeeper and Kafka running in background start both zookeeper and kafka using below commands
+
  > ~/kafka_2.13-3.6.1/bin/zookeeper-server-start.sh -daemon ~/kafka_2.13-3.6.1/config/zookeeper.properties
+
  > ~/kafka_2.13-3.6.1/bin/kafka-server-start.sh -daemon ~/kafka_2.13-3.6.1/config/server.properties 
 
 We have used daemon in above command. In the Unix and Linux world, a daemon is a background process that typically performs tasks without requiring user interaction
