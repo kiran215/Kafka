@@ -1,5 +1,5 @@
 # Kafka
-Kafka Installation on Windows 10 using Windows Subsystem for Linux(WSL2) and Spring boot integration with kafka
+Kafka Installation on Windows 10 using Windows Subsystem for Linux(WSL2)
 
 Due to several issues it is not recommended to install kafka directly on windows.
 Below are the issues that can be arise over a time while using kafka on windows machine. Go to below links for more details on issues.
