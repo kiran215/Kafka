@@ -90,7 +90,7 @@ OpenJDK 64-Bit Server VM Corretto-11.0.22.7.1 (build 11.0.22+7-LTS, mixed mode)*
 
 i) Use below steps to download latest version of kafka on WSL2 Ubuntu.To check the latest version of kafka go to https://kafka.apache.org/downloads
 
-    a) Below command will download zip file of kafka binaries
+   a) Below command will download zip file of kafka binaries
     
        >  wget https://archive.apache.org/dist/kafka/3.6.1/kafka_2.13-3.6.1.tgz
        
