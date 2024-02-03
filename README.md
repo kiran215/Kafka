@@ -28,6 +28,7 @@ i) Open Windows Power Shell on your system
 ii) Type wsl --install on power shell and click on Enter.
    
 iii) It will start installation of wsl as shown below
+
    **Installing: Virtual Machine Platform
 Virtual Machine Platform has been installed.
 Installing: Windows Subsystem for Linux
@@ -36,6 +37,7 @@ Installing: Windows Subsystem for Linux
 [============              21.0%**
 
 iv) Once the installation get completed it will show below message. Changes will be effective after rebooting the system.
+
 **Installing: Virtual Machine Platform
 Virtual Machine Platform has been installed.
 Installing: Windows Subsystem for Linux
@@ -47,20 +49,22 @@ Ubuntu has been installed.
 The requested operation is successful. Changes will not be effective until the system is rebooted**.
 
 v) After rebooting the system a console window will open and it will start launching of Ubuntu on your system
+
    **Ubuntu is already installed.
 Launching Ubuntu...
 Installing, this may take a few minutes...**
 
 vi) To complete the installation you will be asked to create username and password for your Linux machine.
    Username should be different than windows username. This usernamew will be your Linux administrator whith the ability to run sudo command.
+   
 vii) Disable IPv6 on WSL2
    WSL2 currently has some networking issue whoch prevent outside program (Java programs, Conduktor etc..) to connect to kafka on WSL2.
    To fix this it is recommended that disable IPv6 on WSL2.
 
    Commands to disbale IPv6 on WSL2
-   a) sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+   > sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
       Above command will aks to enter the password of Linux user created in steps 6.
-   b) sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
+   > sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
 2. Install Java JDK11 on WSL2 Ubuntu
 
@@ -68,11 +72,15 @@ i) Run below commands to donwload Amazon Corretto 11 running a Debian-based oper
    Refer below link for more details
    https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/generic-linux-install.html
    Commands as below :
+   
    > wget -O- https://apt.corretto.aws/corretto.key | sudo apt-key add - 
+
    > sudo add-apt-repository 'deb https://apt.corretto.aws stable main'
+   
    > sudo apt-get update; sudo apt-get install -y java-11-amazon-corretto-jdk
 
 ii)   After installation of Java JDK 11 check the installated java version using java --version command , it will give below response
+
 **openjdk 11.0.22 2024-01-16 LTS
 OpenJDK Runtime Environment Corretto-11.0.22.7.1 (build 11.0.22+7-LTS)
 OpenJDK 64-Bit Server VM Corretto-11.0.22.7.1 (build 11.0.22+7-LTS, mixed mode)** 
@@ -82,11 +90,12 @@ OpenJDK 64-Bit Server VM Corretto-11.0.22.7.1 (build 11.0.22+7-LTS, mixed mode)*
 i) Use below steps to download latest version of kafka on WSL2 Ubuntu.To check the latest version of kafka go to https://kafka.apache.org/downloads
 
     a) Below command will download zip file of kafka binaries
-    
+   
        >  wget https://archive.apache.org/dist/kafka/3.6.1/kafka_2.13-3.6.1.tgz
+       
    b) To extract the zip file downloaded in above steps use below command
    
-       <  tar xzf kafka_2.13-3.6.1.tgz
+       ?  tar xzf kafka_2.13-3.6.1.tgz
 
 4. Start Zookeeper
    Apache kafka depends on Zookeeper for cluster management. Zookeeper comes with kafka installation.
