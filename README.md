@@ -132,4 +132,57 @@ To stop Zookeeper use below command
 To stop Kafka use below command
 
    > ~/kafka_2.13-3.6.1/bin/kafka-server-stop.sh
+
+ understand
+ bootstrap-server
+ partitions
+ replication-factor
+ 
+# Command for kafka topic creation with 3 partition and 1 replication factor
+~/kafka_2.13-3.6.1/bin/kafka-topics.sh --bootstrap-server localhost:9092 --topic first_topic --create --partitions 3 --replication-factor 1
+
+# Command to list kafka topics
+~/kafka_2.13-3.6.1/bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+
+#Command to describe kafka topics
+kiran@DESKTOP-4K8LLO9:~$ ~/kafka_2.13-3.6.1/bin/kafka-topics.sh --describe --bootstrap-server localhost:9092
+Topic: first_topic      TopicId: uRUMfcOLTEGKOOZOZLrp1Q PartitionCount: 3       ReplicationFactor: 1    Configs:
+        Topic: first_topic      Partition: 0    Leader: 0       Replicas: 0     Isr: 0
+        Topic: first_topic      Partition: 1    Leader: 0       Replicas: 0     Isr: 0
+        Topic: first_topic      Partition: 2    Leader: 0       Replicas: 0     Isr: 0
+
+# Check IP of WSL
+ifconfig
+
+#On your local machine run CMD as Administrator and execute below command
+netsh interface portproxy add v4tov4 listenport=9092 listenaddress=0.0.0.0 connectport=9092 connectaddress=172.25.26.252-> this IP will be output of ifconfig from WSL
+
+The serialization process transforms the business objects you want to send to Kafka into bytes. The deserialization process is the opposite. It receives the bytes from Kafka and recreates the business objects.
+
+# To stop auto creation of kafka topic add below line in server.properties at location 
+~/kafka_2.13-3.6.1/config/server.properties
+
+**Line to add** 
+auto.create.topics.enable=false
+
+**Below commands to consume message from kafka topic using parition**
+kiran@DESKTOP-4K8LLO9:~$ ~/kafka_2.13-3.6.1/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --from-beginning --property print.partition=true
+Partition:1     Hellosouth2
+Partition:1     kiransadaye
+Partition:1     udaysadaye
+Partition:2     udaysadaye
+^CProcessed a total of 4 messages
+kiran@DESKTOP-4K8LLO9:~$ ~/kafka_2.13-3.6.1/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --from-beginning --partition=1
+Hellosouth2
+kiransadaye
+udaysadaye
+^CProcessed a total of 3 messages
+kiran@DESKTOP-4K8LLO9:~$ ~/kafka_2.13-3.6.1/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --from-beginning --partition=2
+udaysadaye
+^CProcessed a total of 1 messages
+
+Next task
+1. Create producer
+2. Create Consumer for parition 0
+Create Consumer for parition 1
    
