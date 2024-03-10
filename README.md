@@ -155,7 +155,7 @@ Topic: first_topic      TopicId: uRUMfcOLTEGKOOZOZLrp1Q PartitionCount: 3       
 ifconfig
 
 #On your local machine run CMD as Administrator and execute below command
-netsh interface portproxy add v4tov4 listenport=9092 listenaddress=0.0.0.0 connectport=9092 connectaddress=172.25.26.252-> this IP will be output of ifconfig from WSL
+> netsh interface portproxy add v4tov4 listenport=9092 listenaddress=0.0.0.0 connectport=9092 connectaddress=172.25.26.252-> this IP will be output of ifconfig from WSL
 
 The serialization process transforms the business objects you want to send to Kafka into bytes. The deserialization process is the opposite. It receives the bytes from Kafka and recreates the business objects.
 
@@ -181,8 +181,4 @@ kiran@DESKTOP-4K8LLO9:~$ ~/kafka_2.13-3.6.1/bin/kafka-console-consumer.sh --boot
 udaysadaye
 ^CProcessed a total of 1 messages
 
-Next task
-1. Create producer
-2. Create Consumer for parition 0
-Create Consumer for parition 1
    
